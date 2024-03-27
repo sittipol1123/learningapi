@@ -9,7 +9,7 @@ export interface DatabaseOptions<Entity> {
   defaultData: Entity[];
 }
 
-export class Database<Entity extends object & {id: string}> {
+export default class Database<Entity extends object & { id: string }> {
   private databasePath: string;
 
   constructor(
@@ -69,4 +69,4 @@ export class Database<Entity extends object & {id: string}> {
   }
 }
 
-module.exports = Database;
+// module.exports = Database;

@@ -1,10 +1,10 @@
-const Database = require("../../lib/database");
+import Database from "../../lib/database";
 import { UserController } from "./user.controller";
 import { UserModel } from "./user.model";
 import { UserRepository } from "./user.repository";
 import { v4 as uuidv4 } from "uuid";
 
-const db = new Database("users", {
+const db = new Database<UserModel>("users", {
   defaultData: [
     {
       id: uuidv4(),
