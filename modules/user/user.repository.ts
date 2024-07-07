@@ -7,4 +7,13 @@ export class UserRepository {
   async getAll() {
     return this.db.readAll();
   }
+
+  async storeUser(data: {
+    id: string;
+    username: string;
+    email: string;
+    password: string;
+  }) {
+    return this.db.insert(data);
+  }
 }
