@@ -62,6 +62,7 @@ export default class Database<Entity extends object & { id: string }> {
 
   async insert(input: Entity) {
     const data = await this.readAll();
+    console.log("data in insert database function is ", input);
     data.push({
       ...input,
       id: uuidv4(),

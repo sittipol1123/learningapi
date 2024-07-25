@@ -9,7 +9,18 @@ export class UserController {
   }
 
   async store(req: Request, res: Response) {
-    console.log(req.body);
+    const tmp: {
+      id: string;
+      username: string;
+      email: string;
+      password: string;
+    } = req.body;
+    await this.userRepository.storeUser(tmp);
+    // if () {
+    //   console.log("success");
+    // } else {
+    //   console.log("error");
+    // }
     // return res.json(await this.userRepository.storeUser(req.body));
   }
 }

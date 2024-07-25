@@ -14,6 +14,8 @@ export class UserRepository {
     email: string;
     password: string;
   }) {
-    return this.db.insert(data);
+    console.log(data);
+    await this.db.insert(data);
+    // return this.db.insert(data);
   }
 }
