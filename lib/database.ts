@@ -67,6 +67,11 @@ export default class Database<Entity extends object & { id: string }> {
       ...input,
       id: uuidv4(),
     } as Entity);
+    await fs.writeFile(
+      this.databasePath,
+      JSON.stringify(data, null, 2),
+      "utf8"
+    );
   }
 }
 
