@@ -8,12 +8,7 @@ export class UserRepository {
     return this.db.readAll();
   }
 
-  async storeUser(data: {
-    id: string;
-    username: string;
-    email: string;
-    password: string;
-  }) {
+  async storeUser(data: UserModel) {
     console.log(data);
     await this.db.insert(data);
     // return this.db.insert(data);

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { UserRepository } from "./user.repository";
+import { UserModel } from "./user.model";
 
 export class UserController {
   constructor(public userRepository: UserRepository) {}
@@ -9,12 +10,7 @@ export class UserController {
   }
 
   async store(req: Request, res: Response) {
-    const tmp: {
-      id: string;
-      username: string;
-      email: string;
-      password: string;
-    } = req.body;
+    const tmp: UserModel = req.body;
     await this.userRepository.storeUser(tmp);
     // if () {
     //   console.log("success");
